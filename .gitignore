@@ -1,0 +1,5 @@
+.terraform.lock.hcl
+*.iml
+*.terraform
+.idea
+.terraform
