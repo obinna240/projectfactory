@@ -1,0 +1,22 @@
+[
+  {
+    "name": "listing_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "date",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "reviewer_name",
+    "type": "STRING"
+  },
+  {
+    "name": "comments",
+    "type": "STRING"
+  },
+  {
+    "name": "sentiment",
+    "type": "STRING"
+  }
+]

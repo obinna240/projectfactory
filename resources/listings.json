@@ -1,0 +1,38 @@
+[
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "listing_url",
+    "type": "STRING"
+  },
+  {
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "name": "room_type",
+    "type": "STRING"
+  },
+  {
+    "name": "minimum_nights",
+    "type": "INTEGER"
+  },
+  {
+    "name": "host_id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "price",
+    "type": "STRING"
+  },
+  {
+    "name": "created_at",
+    "type": "TIMESTAMP"
+  },
+  {
+    "name": "updated_at",
+    "type": "TIMESTAMP"
+  }
+]
