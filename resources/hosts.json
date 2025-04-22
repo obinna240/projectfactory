@@ -1,0 +1,22 @@
+[
+  {
+    "name": "id",
+    "type": "INTEGER"
+  },
+  {
+    "name": "name",
+    "type": "STRING"
+  },
+  {
+    "name": "is_superhost",
+    "type": "BOOLEAN"
+  },
+  {
+    "name": "created_at",
+    "type": "DATETIME"
+  },
+  {
+    "name": "updated_at",
+    "type": "DATETIME"
+  }
+]
