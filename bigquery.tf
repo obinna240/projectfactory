@@ -11,7 +11,7 @@ resource "google_bigquery_table" "airbnb_dbt_tables" {
   for_each = local.schema_files
 
   dataset_id = google_bigquery_dataset.airbnb.dataset_id
-  table_id   = "${each.key}.csv"
+  table_id   = "${each.key}"
 
   schema = file("${path.module}/${each.value}")
 
@@ -21,7 +21,11 @@ resource "google_bigquery_table" "airbnb_dbt_tables" {
     ]
     source_format = "CSV"
     autodetect    = false # Disable autodetect because we are using the schema from the JSON
-    field_delimiter = ","
-    skip_leading_rows = 1
+    csv_options {
+      field_delimiter = ","
+      quote = ""
+      skip_leading_rows = 1
+    }
+
   }
 }
