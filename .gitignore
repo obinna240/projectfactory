@@ -3,3 +3,6 @@
 *.terraform
 .idea
 .terraform
+*.DS_Store
+/.DS_Store
+resources/reviews.csv
