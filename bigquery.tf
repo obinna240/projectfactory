@@ -5,13 +5,6 @@ resource "google_bigquery_dataset" "airbnb" {
   description = "Airbnb reviews, hosts and listings "
 }
 
-# storage bucket object
-resource "google_storage_bucket_object" "csv_objects" {
-  for_each = var.airbnb_files
-  name     = each.key
-  bucket   = google_storage_bucket.airbnb_dbt_work_bucket.name
-  source   = "${path.module}/${each.value}"
-}
 
 # write to bq
 resource "google_bigquery_table" "airbnb_dbt_tables" {
