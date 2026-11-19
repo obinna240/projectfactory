@@ -29,3 +29,9 @@ module "dataflow" {
   project_id = var.project_id
   region     = var.region
 }
+
+module "artifactregistry" {
+  source     = "./modules/artifactregistry"
+  project_id = var.project_id
+  region     = var.region
+}
