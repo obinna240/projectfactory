@@ -14,6 +14,8 @@ variable "airbnb_files" {
   default = {
     "hosts.csv"    = "resources/hosts.csv"
     "listings.csv" = "resources/listings.csv"
-#    "reviews.csv"  = "resources/reviews.csv"
+    "reviews.csv"  = "resources/reviews.csv"
   }
+
+
 }
