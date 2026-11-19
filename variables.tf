@@ -11,9 +11,10 @@ variable "region" {
 }
 
 variable "airbnb_files" {
+  type        = map(string)
+  description = "Object name to CSV path relative to the repository root"
   default = {
     "hosts.csv"    = "resources/hosts.csv"
     "listings.csv" = "resources/listings.csv"
-#    "reviews.csv"  = "resources/reviews.csv"
   }
 }

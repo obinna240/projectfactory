@@ -23,9 +23,9 @@ resource "google_iam_workload_identity_pool" "gha_pool" {
 
 resource "google_iam_workload_identity_pool_provider" "github_provider" {
   workload_identity_pool_id          = google_iam_workload_identity_pool.gha_pool.workload_identity_pool_id
-  workload_identity_pool_provider_id = local.ghaprovider
+  workload_identity_pool_provider_id = var.ghaprovider
   project                            = var.project_id
-  display_name                       = local.gha_display_name
+  display_name                       = var.gha_display_name
   description                        = "GitHub Actions identity pool provider for automated test"
   attribute_condition                = <<EOT
     assertion.repository_owner_id == "965171141" &&
