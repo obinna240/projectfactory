@@ -5,4 +5,4 @@
 #gsutil mb -l europe-west4 gs://tf-state-gcs-oskylala-new/
 
 #load data from local file to gcs
-gcloud storage cp /reviews.csv" gs://airbnb-osky
+gcloud storage cp resources/hosts.csv resources/listings.csv gs://airbnb-osky

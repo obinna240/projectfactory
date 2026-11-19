@@ -8,16 +8,16 @@ resource "google_bigquery_dataset" "airbnb" {
 
 # write to bq
 resource "google_bigquery_table" "airbnb_dbt_tables" {
-  for_each = local.schema_files
+  for_each = var.schema_files
 
   dataset_id = google_bigquery_dataset.airbnb.dataset_id
   table_id   = each.key
 
-  schema = file("${path.module}/${each.value}")
+  schema = file(each.value)
 
   external_data_configuration {
     source_uris = [
-      "gs://${google_storage_bucket.airbnb_dbt_work_bucket.name}/${each.key}.csv"
+      "gs://${var.bucket_name}/${each.key}.csv"
     ]
     source_format = "CSV"
     autodetect    = false # Disable autodetect because we are using the schema from the JSON
@@ -31,7 +31,7 @@ resource "google_bigquery_table" "airbnb_dbt_tables" {
 }
 
 #resource "google_bigquery_job" "job" {
-#  for_each = toset(local.airbnb_files)
+#  for_each = toset(var.airbnb_files)
 #  job_id   = "load-${each.value}"
 #
 #  labels = {
@@ -40,7 +40,7 @@ resource "google_bigquery_table" "airbnb_dbt_tables" {
 #
 #  load {
 #    source_uris = [
-#      "gs://${local.gcs_name}}/${each.value}",
+#      "gs://${var.bucket_name}/${each.value}.csv",
 #    ]
 #
 #    destination_table {
