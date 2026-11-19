@@ -23,3 +23,9 @@ module "serviceaccount" {
   ghaprovider      = local.ghaprovider
   gha_display_name = local.gha_display_name
 }
+
+module "dataflow" {
+  source     = "./modules/dataflow"
+  project_id = var.project_id
+  region     = var.region
+}
